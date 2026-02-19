@@ -1,5 +1,10 @@
 {
     "autogitcommit.branch": "master",
     "autogitcommit.enable": true,
-    "autogitcommitnoverify.enable": true
+    "autogitcommitnoverify.enable": true,
+    "gitdoc.ai.enabled": true,
+    "gitdoc.autoPullDelay": 3000,
+    "gitdoc.autoPushDelay": 3000,
+    "gitdoc.enabled": true,
+    "gitdoc.noVerify": true
 }

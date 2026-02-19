@@ -1,13 +1,12 @@
-
-/* --- LE34 CUSTOM CSS INJECTOR (Cloud Version) --- */
 (function() {
     if (!document.getElementById('le34-team-css')) {
         var link = document.createElement('link');
         link.id = 'le34-team-css';
         link.rel = 'stylesheet';
-        // Vi tilføjer ?v= + Math.random() så browseren tvinges til at hente din nyeste fil hver gang
-        link.href = 'https://raw.githack.com/NiklasLE34/LE34_LocalOverrides_/refs/heads/master/staging.le34.webnorth.cloud/wp-content/litespeed/css/le34style.css'();
+        // Vi bruger dit nye Netlify link her:
+        link.href = 'https://glittery-stroopwafel-9aa226.netlify.app/staging.le34.webnorth.cloud/wp-content/litespeed/css/le34style.css';
         document.head.appendChild(link);
+        console.log('LE34 CSS indlæst via Netlify');
     }
 })();
 /* --- ORIGINAL KODE STARTER HERUNDER --- */

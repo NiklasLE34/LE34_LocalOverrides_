@@ -1,4 +1,5 @@
 {
     "autogitcommit.branch": "master",
-    "autogitcommit.enable": true
+    "autogitcommit.enable": true,
+    "autogitcommitnoverify.enable": true
 }

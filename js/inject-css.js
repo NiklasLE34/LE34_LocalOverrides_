@@ -1,7 +1,7 @@
 (function() {
 
     var baseUrl = 'https://le34-localoverrides.pages.dev/css/';
-    var files = ['font.css', '2.css', '3.css', '4.css'];
+    var files = ['font.css', 'grid.css', 'migration.css', 'proposals.css'];
 
     files.forEach(function(file) {
 

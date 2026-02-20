@@ -1,5 +1,5 @@
 /* ==============================================
-   Topnav
+   Forslag: Topnav gaps
    ============================================== */
 
 /* --- JUSTÉR HER --- */
@@ -27,4 +27,14 @@
     width: auto;
     flex-wrap: nowrap;
   }
+}
+
+/* ==============================================
+   Forslag: Offset Image – align med venstre-regel
+   ============================================== */
+
+/* --- SYSTEM (NIX PILLE) --- */
+.module-new-image-video .miv-single{
+  /* matcher eksisterende grid (rail + container padding) */
+  --offset: calc(var(--grid-aside-width) + 40px);
 }

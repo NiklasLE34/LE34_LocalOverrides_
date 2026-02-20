@@ -1,13 +1,25 @@
 (function() {
-    if (!document.getElementById('le34-team-css')) {
-        var link = document.createElement('link');
-        link.id = 'le34-team-css';
-        link.rel = 'stylesheet';
-        // Vi bruger dit nye Cloudflare link her:
-        link.href = 'https://le34-localoverrides.pages.dev/css/font.css';
-        document.head.appendChild(link);
-        console.log('LE34 CSS indlæst via Cloudflare');
-    }
+
+    var baseUrl = 'https://le34-localoverrides.pages.dev/css/';
+    var files = ['font.css', '2.css', '3.css', '4.css'];
+
+    files.forEach(function(file) {
+
+        var id = 'le34-css-' + file.replace('.css', '');
+
+        if (!document.getElementById(id)) {
+
+            var link = document.createElement('link');
+            link.id = id;
+            link.rel = 'stylesheet';
+            link.href = baseUrl + file;
+
+            document.head.appendChild(link);
+        }
+    });
+
+    console.log('LE34 CSS-filer indlæst via Cloudflare');
+
 })();
 /* --- ORIGINAL KODE STARTER HERUNDER --- */
 

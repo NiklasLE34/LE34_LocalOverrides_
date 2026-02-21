@@ -104,3 +104,20 @@
 .module-text .text-item{
   padding-right: var(--text-column-padding-right);
 }
+
+
+/* ==============================================
+   Forslag: Text – paragraph spacing (baseline aligned)
+   ============================================== */
+
+/* --- JUSTÉR HER --- */
+:root{
+  /* 1.00 = aligns columns best (baseline step) */
+  --text-paragraph-gap: 1;
+}
+
+/* --- APPLY --- */
+/* Override the global `p:not(:last-child){ margin-bottom: 1rem; }` locally */
+.module-text .text p:not(:last-child){
+  margin-bottom: calc(var(--lh-p) * var(--text-paragraph-gap) * 1em);
+}

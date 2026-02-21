@@ -29,6 +29,7 @@
   }
 }
 
+
 /* ==============================================
    Forslag: Offset Image – align med venstre-regel
    ============================================== */
@@ -37,4 +38,34 @@
 .module-new-image-video .miv-single{
   /* matcher eksisterende grid (rail + container padding) */
   --offset: calc(var(--grid-aside-width) + 40px);
+}
+
+
+/* ==============================================
+   Forslag: Hero – text width (measure)
+   ============================================== */
+
+/* --- JUSTÉR HER --- */
+:root{
+  /* 1 knob. 55ch ≈ behagelig læselængde for brødtekst */
+  --hero-text-max: 68ch;
+
+  /* headline lidt smallere (så den ikke bliver “to lines of pain”) */
+  --hero-title-max: 26ch;
+}
+
+/* --- SYSTEM (NIX PILLE) --- */
+/* Scoped: ram kun Hero og kun tekst-elementerne.
+   Replaces dev default “max-width: 100%” for hero text. */
+.module-hero .heading-01{
+  max-width: var(--hero-title-max);
+}
+
+.module-hero .text{
+  max-width: var(--hero-text-max);
+}
+
+/* Safety: hvis deres CSS har max-width:100% direkte på p */
+.module-hero .text p{
+  max-width: inherit;
 }

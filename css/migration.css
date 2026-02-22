@@ -1,4 +1,12 @@
 /* ==============================================
+   64px over og under containere (meldt ind i Trello)
+   ============================================== */
+.module .container{
+  padding-top: 64px;
+  padding-bottom: 64px;
+}
+
+/* ==============================================
    Forslag: Topnav gaps
    ============================================== */
 
@@ -147,6 +155,7 @@ nav.main-header__languages.lang-menu {
 .lang-menu svg { 
   margin-right: 8px;
 }
+
 
 /* Tykkere stroke */
 .main-header {

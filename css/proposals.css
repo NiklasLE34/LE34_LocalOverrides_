@@ -1,1 +1,188 @@
+/* ==============================================
+   Forslag: Topnav Gaps
+   ============================================== */
 
+/* --- JUSTÉR HER --- */
+:root{
+  --nav-gap: 40px;
+  --nav-gap-max: 62px;
+}
+
+/* --- SYSTEM (NIX PILLE) --- */
+:root{
+  --nav-gap-safe: clamp(10px, var(--nav-gap), var(--nav-gap-max));
+}
+
+@media (min-width: 1025px){
+  #header .main-header__col--nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  #header .main-header__nav > ul{
+    display: flex;
+    justify-content: flex-start;
+    gap: var(--nav-gap-safe);
+    width: auto;
+    flex-wrap: nowrap;
+  }
+}
+
+
+
+/* ==============================================
+   Forslag: Offset Image – align med venstre-regel
+   ============================================== */
+
+/* --- SYSTEM (NIX PILLE) --- */
+.module-new-image-video .miv-single{
+  /* matcher eksisterende grid (rail + container padding) */
+  --offset: calc(var(--grid-aside-width) + 40px);
+}
+
+
+/* ==============================================
+   Forslag: Hero – text width (measure)
+   ============================================== */
+
+/* --- JUSTÉR HER --- */
+:root{
+  /* 1 knob. 55ch ≈ behagelig læselængde for brødtekst */
+  --hero-text-max: 68ch;
+
+  /* Headline lidt smallere (så den ikke bliver “to lines of pain”) */
+  --hero-title-max: 26ch;
+}
+
+/* --- SYSTEM (NIX PILLE) --- */
+/* Scoped: ram kun Hero og kun tekst-elementerne.
+   Replaces dev default “max-width: 100%” for hero text. */
+.module-hero .heading-01{
+  max-width: var(--hero-title-max);
+}
+
+.module-hero .text{
+  max-width: var(--hero-text-max);
+}
+
+/* Safety: hvis deres CSS har max-width:100% direkte på p */
+.module-hero .text p{
+  max-width: inherit;
+}
+
+
+/* ==============================================
+   Forslag: Heading to text spacing rules
+   ============================================== */
+
+/* --- JUSTÉR HER --- */
+:root{
+  /* Global default for headings inside .text */
+  --space-heading-to-text: 12px;
+
+  /* Hero exception (keep as 16px unless you decide otherwise) */
+  --hero-space-title-to-text: 16px;
+}
+
+/* --- APPLY (matches theme selectors) --- */
+body .text h1:not(:last-child),
+body .text h2:not(:last-child),
+body .text h3:not(:last-child),
+body .text h4:not(:last-child),
+body .text h5:not(:last-child),
+body .text h6:not(:last-child),
+body .text .leading:not(:last-child){
+  margin-bottom: var(--space-heading-to-text);
+}
+
+/* Hero: override only H1 → text (so Hero can be different if needed later) */
+.module-hero .text h1:not(:last-child),
+.module-hero .module-hero__content .heading-01:not(:last-child){
+  margin-bottom: var(--hero-space-title-to-text);
+}
+
+
+/* ==============================================
+   Forslag: Text module – text breathing space
+   ============================================== */
+
+/* --- JUSTÉR HER --- */
+:root{
+  --text-column-padding-right: 40px;
+}
+
+/* --- APPLY --- */
+.module-text .text-item{
+  padding-right: var(--text-column-padding-right);
+}
+
+
+/* ==============================================
+   Forslag: Text – paragraph spacing (baseline aligned)
+   ============================================== */
+
+/* --- JUSTÉR HER --- */
+:root{
+  /* 1.00 = aligns columns best (baseline step) */
+  --text-paragraph-gap: 1;
+}
+
+/* --- APPLY --- */
+/* Override the global `p:not(:last-child){ margin-bottom: 1rem; }` locally */
+.module-text .text p:not(:last-child){
+  margin-bottom: calc(var(--lh-p) * var(--text-paragraph-gap) * 1em);
+}
+
+
+
+/* ==============================================
+   Forslag: Smårettelser til Nav Right
+   ============================================== */
+
+/* Align ikon og sprogkode */
+nav.main-header__languages.lang-menu {
+  align-items: center;
+}
+
+/* Mere luft mellem ikon og sprogkode */
+.lang-menu svg { 
+  margin-right: 8px;
+}
+
+
+/* Tykkere stroke */
+.main-header {
+  stroke-width: 1.2;    
+}
+
+
+
+
+/* ==============================================
+   Forslag: Header States - størrelser
+   ============================================== */
+
+/* --- JUSTÉR HER --- */
+.main-header__logo {
+  width:  4rem;      /*64px*/
+  height: 4rem;      
+  max-height: 4rem;  
+  max-width: 4rem;   
+}
+
+.main-header--shadow .main-header__logo {
+  max-height: 3.5rem;  /*56px*/
+  max-width: 3.5rem;
+}
+
+
+
+/* ==============================================
+   Forslag: Caption opacity
+   ============================================== */
+   
+/* --- JUSTÉR HER --- */
+.module-new-image-video__caption{
+opacity: 0.75;
+} 

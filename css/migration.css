@@ -59,3 +59,17 @@ section.module.employees .wrap::after{
   opacity: 0 !important;
   display: none !important;
 }
+
+/*Streger synlige*/
+.animated.employee:after, .animated.table-item:after{
+opacity: 1;
+}
+
+
+
+/* ==============================================
+   Thumb 8 col ikke klikbar på hele containeren (delvist i gang på Trello)
+   ============================================== */
+a.thumb-item__full-link.initialized {
+    z-index: -1 !important;
+}

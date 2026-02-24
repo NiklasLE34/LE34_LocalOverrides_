@@ -119,3 +119,51 @@ p{
 /* UI */
 input, textarea{ font-size: var(--input); }
 .nav-item{ font-size: var(--nav); }
+
+
+/* ==============================================
+   Data module – typography knobs (titles + subtitle)
+   ============================================== */
+
+/* --- KNOBS (adjust here) --- */
+:root{
+  /* Titles (Data item) */
+  --data-title-big: 4rem;
+  /* WAS ~4.57rem (≈73px) → NOW 64px */
+
+  --data-title-medium: 3rem;
+  /* WAS ~3.43rem (≈55px) → NOW 48px */
+
+  --data-title-small: 2rem;
+  /* WAS ~1.71rem (≈27px) → NOW 32px */
+
+  /* Subtitle (h5 in Data item) */
+  --data-subtitle-size: 1.25rem;
+  /* WAS ~1.14rem (≈18px) → NOW ≈20px */
+}
+
+/* --- SYSTEM (apply) --- */
+
+/* Data titles */
+.data-item__title.number-item.big,
+.data-item__title.big{
+  font-size: var(--data-title-big);
+}
+
+.data-item__title.medium{
+  font-size: var(--data-title-medium);
+}
+
+.data-item__title.small{
+  font-size: var(--data-title-small);
+}
+
+/* Subtitle (h5 override – because module overrides fonts.css) */
+.data-item__subtitle,
+.data-item__subtitle.h5,
+.data-item__subtitle.heading-05,
+.data-item__subtitle h5,
+.data-item__subtitle .h5,
+.data-item__subtitle .heading-05{
+  font-size: var(--data-subtitle-size);
+}

@@ -205,3 +205,11 @@ nav.main-header__languages.lang-menu {
 }
 
 
+
+/* ==============================================
+   Forslag: Data - Equal spacing over/under stroke 
+   ============================================== */
+.data-item__top {
+  margin-bottom: 16px;
+  padding-bottom:0;
+}

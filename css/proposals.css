@@ -239,7 +239,7 @@ nav.main-header__languages.lang-menu {
    Forslag: 64px mellem Text m. 'multiple rows' 
    ============================================== */
 .text-items.text-items--multiple {
-  gap: 64px 40px;
+  gap: 64px 40px !important;
 }
 
 
